@@ -5,18 +5,14 @@
 using namespace cv;
 using namespace std;
 int main(int argc, char** argv)
-{
-   /* if (argc != 2)
-    {
-        cout << " Usage: " << argv[0] << " ImageToLoadAndDisplay" << endl;
-        return -1;
-    }*/
+{   
+    std::cout << "DigiMap v1.0" << std::endl;
     Mat image;
     image = imread("C:\\Dev\\Repo\\cpp\\Digimap\\x64\\Debug\\opencv-logo.png", IMREAD_COLOR); // Read the file
     if (image.empty()) // Check for invalid input
     {
         cout << "Could not open or find the image" << std::endl;
-        return -1;
+        return -1; 
     }
     namedWindow("Display window", WINDOW_AUTOSIZE); // Create a window for display.
     imshow("Display window", image); // Show our image inside it.
