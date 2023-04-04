@@ -30,7 +30,6 @@ void thresh_callback(int, void*);
 int brightnessAdjustment(double);
 
 
-
 int main(int argc, char** argv)
 {   
     std::cout << "DigiMap v1.0" << std::endl;
@@ -51,8 +50,7 @@ int main(int argc, char** argv)
     //boundingBox();
 
     //5. Brightness Adjustment
-    brightnessAdjustment(50);
-    
+    brightnessAdjustment(50);    
 
 
         
@@ -112,6 +110,7 @@ void MyEllipse(Mat img, double angle)
         lineType);
 
 }
+
 void MyFilledCircle(Mat img, Point center)
 {
     circle(img,
@@ -121,6 +120,7 @@ void MyFilledCircle(Mat img, Point center)
         FILLED,
         LINE_8);
 }
+
 void MyPolygon(Mat img)
 {
     int lineType = LINE_8;
@@ -154,6 +154,7 @@ void MyPolygon(Mat img)
         Scalar(255, 255, 255),
         lineType);
 }
+
 void MyLine(Mat img, Point start, Point end)
 {
     int thickness = 2;
