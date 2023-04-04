@@ -1,7 +1,7 @@
 # Digimap
 Digital Image Processing
 
-Select which demo you want to run by commenting/uncommenting the respective line(s) of code in main():
+Select which demo you want to run by commenting/uncommenting the respective line of code in main():
 
 
 //----- SELECT DEMO -----//
