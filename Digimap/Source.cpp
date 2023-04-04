@@ -27,6 +27,7 @@ int cornerHarrisDemo();
 int shiTomasiDemo();
 int boundingBox();
 void thresh_callback(int, void*);
+int brightnessAdjustment(double);
 
 
 
@@ -47,7 +48,10 @@ int main(int argc, char** argv)
     //shiTomasiDemo();
 
     //4. Bounding Box
-    boundingBox();
+    //boundingBox();
+
+    //5. Brightness Adjustment
+    brightnessAdjustment(50);
     
 
 
@@ -221,7 +225,7 @@ int boundingBox() {
 
     Mat input_image = imread("C:\\Dev\\Repo\\cpp\\Digimap\\x64\\Debug\\input_image.jpg");
     
-
+   
     if (input_image.empty()) // Check for invalid input
     {
         cout << "Could not open or find the image" << std::endl;
@@ -263,4 +267,24 @@ void thresh_callback(int, void*)
         circle(drawing, centers[i], (int)radius[i], color, 2);
     }
     imshow("Contours", drawing);
+}
+
+int brightnessAdjustment(double beta) {
+
+    Mat input_image = imread("C:\\Dev\\Repo\\cpp\\Digimap\\x64\\Debug\\input_image.jpg");
+    Mat output_image;
+
+    if (input_image.empty()) // Check for invalid input
+    {
+        cout << "Could not open or find the image" << std::endl;
+        return -1;
+    }
+
+    input_image.convertTo(output_image, -1, 1, beta);
+
+    string adjImage = "Brightness Adjusted Image";
+    namedWindow(adjImage, WINDOW_NORMAL);
+    imshow(adjImage, output_image);
+
+    return 0;
 }
