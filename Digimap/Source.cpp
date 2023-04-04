@@ -92,7 +92,6 @@ void basicDrawing()
     moveWindow(atom_window, 0, 200);
     imshow(rook_window, rook_image);
     moveWindow(rook_window, w, 200);
-
 }
 
 void MyEllipse(Mat img, double angle)
@@ -108,7 +107,6 @@ void MyEllipse(Mat img, double angle)
         Scalar(255, 0, 0),
         thickness,
         lineType);
-
 }
 
 void MyFilledCircle(Mat img, Point center)
