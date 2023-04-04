@@ -161,16 +161,14 @@ int cornerHarrisDemo() {
         cout << "Could not open or find the image" << std::endl;
         return -1;
     }
-
-    // Detect corners using Harris corner detector
+        
     Mat corner_image;
     cornerHarris(input_image, corner_image, 2, 3, 0.04);
 
     // Normalize corner response image for display
     Mat corner_norm;
     normalize(corner_image, corner_norm, 0, 255, NORM_MINMAX, CV_8UC1);
-
-    // Display corner response image
+    
     imshow("Corner Response Image", corner_norm);
 
     return 0;
