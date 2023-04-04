@@ -3,7 +3,7 @@
 /*                            DIGIMAP v1.0                                  */
 /*                      Digital Image Processing                            */
 /*                                                                          */
-/*  author: Joseph A.R Ogren                                                */
+/*  author: Joseph A.R. Ogren                                                */
 /*  e-mail: joseph.ar.ogren@pm.me                                           */
 /****************************************************************************/
 
@@ -19,8 +19,10 @@ const int w = 400;
 using namespace cv;
 using namespace std;
 
-int cornerHarrisDemo();
 void basicDrawing();
+int cornerHarrisDemo();
+int shiTomasiDemo();
+
 
 
 int main(int argc, char** argv)
@@ -35,6 +37,9 @@ int main(int argc, char** argv)
  
     //2. Feature Detection
     //cornerHarrisDemo();
+
+    //3. Feature Detection 2
+    //shiTomasiDemo();
     
         
     waitKey(0);
@@ -171,3 +176,35 @@ int cornerHarrisDemo() {
     return 0;
 }
 
+int shiTomasiDemo() {
+    
+    Mat input_image = imread("C:\\Dev\\Repo\\cpp\\Digimap\\x64\\Debug\\input_image.jpg");
+
+    if (input_image.empty()) // Check for invalid input
+    {
+        cout << "Could not open or find the image" << std::endl;
+        return -1;
+    }
+    
+    Mat gray;
+    cvtColor(input_image, gray, COLOR_BGR2GRAY);
+
+    // parameters for the Shi-Tomasi corner detector
+    int max_corners = 100;
+    double quality_level = 0.3;
+    double min_distance = 7;
+    int block_size = 7;
+    
+    vector<Point2f> corners;
+    goodFeaturesToTrack(gray, corners, max_corners, quality_level, min_distance, Mat(), block_size, false, 0.04);
+    
+    for (int i = 0; i < corners.size(); i++)
+    {
+        circle(input_image, corners[i], 5, Scalar(0, 255, 0), -1);
+    }
+    
+    namedWindow("Shi-Tomasi Corner Detector", WINDOW_NORMAL);
+    imshow("Shi-Tomasi Corner Detector", input_image);
+
+    return 0;
+}
