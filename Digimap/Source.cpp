@@ -62,7 +62,6 @@ int main(int argc, char** argv)
 
 void basicDrawing() 
 {
-
     void MyEllipse(Mat img, double angle);
     void MyFilledCircle(Mat img, Point center);
     void MyPolygon(Mat img);
@@ -170,7 +169,6 @@ void MyLine(Mat img, Point start, Point end)
 
 int cornerHarrisDemo() 
 {
-
     Mat input_image = imread("C:\\Dev\\Repo\\cpp\\Digimap\\x64\\Debug\\input_image.jpg", IMREAD_GRAYSCALE);
 
     if (input_image.empty()) // Check for invalid input
@@ -193,7 +191,6 @@ int cornerHarrisDemo()
 
 int shiTomasiDemo() 
 {
-    
     Mat input_image = imread("C:\\Dev\\Repo\\cpp\\Digimap\\x64\\Debug\\input_image.jpg");
 
     if (input_image.empty()) // Check for invalid input
@@ -227,9 +224,7 @@ int shiTomasiDemo()
 
 int boundingBox() 
 {
-
-    Mat input_image = imread("C:\\Dev\\Repo\\cpp\\Digimap\\x64\\Debug\\input_image.jpg");
-    
+    Mat input_image = imread("C:\\Dev\\Repo\\cpp\\Digimap\\x64\\Debug\\input_image.jpg");    
    
     if (input_image.empty()) // Check for invalid input
     {
@@ -276,7 +271,6 @@ void thresh_callback(int, void*)
 
 int brightnessAdjustment(double beta) 
 {
-
     Mat input_image = imread("C:\\Dev\\Repo\\cpp\\Digimap\\x64\\Debug\\input_image.jpg");
     Mat output_image;
 
