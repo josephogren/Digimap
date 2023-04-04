@@ -47,10 +47,10 @@ int main(int argc, char** argv)
     //shiTomasiDemo();
 
     //4. Bounding Box
-    //boundingBox();
+    boundingBox();
 
     //5. Brightness Adjustment
-    brightnessAdjustment(50);    
+    //brightnessAdjustment(50);    
 
 
         
@@ -60,7 +60,8 @@ int main(int argc, char** argv)
 }
 
 
-void basicDrawing() {
+void basicDrawing() 
+{
 
     void MyEllipse(Mat img, double angle);
     void MyFilledCircle(Mat img, Point center);
@@ -167,7 +168,8 @@ void MyLine(Mat img, Point start, Point end)
         lineType);
 }
 
-int cornerHarrisDemo() {
+int cornerHarrisDemo() 
+{
 
     Mat input_image = imread("C:\\Dev\\Repo\\cpp\\Digimap\\x64\\Debug\\input_image.jpg", IMREAD_GRAYSCALE);
 
@@ -189,7 +191,8 @@ int cornerHarrisDemo() {
     return 0;
 }
 
-int shiTomasiDemo() {
+int shiTomasiDemo() 
+{
     
     Mat input_image = imread("C:\\Dev\\Repo\\cpp\\Digimap\\x64\\Debug\\input_image.jpg");
 
@@ -222,7 +225,8 @@ int shiTomasiDemo() {
     return 0;
 }
 
-int boundingBox() {
+int boundingBox() 
+{
 
     Mat input_image = imread("C:\\Dev\\Repo\\cpp\\Digimap\\x64\\Debug\\input_image.jpg");
     
@@ -270,7 +274,8 @@ void thresh_callback(int, void*)
     imshow("Contours", drawing);
 }
 
-int brightnessAdjustment(double beta) {
+int brightnessAdjustment(double beta) 
+{
 
     Mat input_image = imread("C:\\Dev\\Repo\\cpp\\Digimap\\x64\\Debug\\input_image.jpg");
     Mat output_image;
